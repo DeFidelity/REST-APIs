@@ -18,9 +18,9 @@ class Drop(models.Model):
         
 class Vote(models.Model):
     voter = models.ForeignKey(User,on_delete=models.CASCADE)
-    post = models.ForeignKey(Drop,on_delete=models.CASCADE)
+    drop = models.ForeignKey(Drop,on_delete=models.CASCADE)
     
     def __str__(self):
-        return f'@{self.voter} voted {self.post}'
+        return f'@{self.voter} voted {self.drop}'
     
     
