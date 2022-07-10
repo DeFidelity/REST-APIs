@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import generics
+from .models import Drop
+from .serializers import DropSerializer
 
-# Create your views here.
+class DropListView(generics.ListAPIView):
+    queryset = Drop.objects.all()
+    serializer_class = DropSerializer
+    
